@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generar Presupuesto | PoliBlocks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon"></span>Poli<span>Blocks</span></a>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="modelos.html">Modelos y Colores</a></li>
+          <li><a href="ensamblaje.html">Instrucciones de Ensamblaje</a></li>
+          <li><a href="obras.html">Obras Sugeridas</a></li>
+          <li><a href="presupuesto.html" class="nav-cta active">Generar Presupuesto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="badge">Cómputo Métrico y Cotización</span>
+        <div class="section-header">
+          <h2>Generar Presupuesto Estimado</h2>
+          <p>Calcule la cantidad de bloques PoliBlock y el presupuesto preliminar para su empresa o institución benéfica.</p>
+        </div>
+
+        <div class="feature-row">
+          <form id="budgetForm">
+            <div class="form-group">
+              <label for="orgType">Tipo de Organización</label>
+              <select id="orgType" class="form-control">
+                <option value="empresa">Empresa Constructora / Privada (Tarifa Estándar)</option>
+                <option value="ong">Institución Benéfica / ONG (15% Descuento Social)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="areaM2">Superficie total de muros no portantes (m²)</label>
+              <input type="number" id="areaM2" class="form-control" min="1" value="50" required>
+            </div>
+
+            <div class="form-group">
+              <label for="blockColor">Color seleccionado</label>
+              <select id="blockColor" class="form-control">
+                <option value="Gris Industrial">Gris Industrial</option>
+                <option value="Negro Carbón">Negro Carbón</option>
+                <option value="Blanco Técnico">Blanco Técnico</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Correo institucional o corporativo</label>
+              <input type="email" id="contactEmail" class="form-control" placeholder="proyectos@institucion.org" required>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+              Calcular y Solicitar Cotización Formal
+            </button>
+          </form>
+
+          <div class="card" style="padding: 2rem; background: var(--bg-elevated);">
+            <span class="card-tag">RESUMEN DEL CÓMPUTO MÉTRICO</span>
+            <h3 style="margin-bottom: 1rem;">Desglose de Materiales</h3>
+            <ul class="spec-list" style="margin-bottom: 1.5rem;">
+              <li><strong>Bloques Enteros (PB-40):</strong> <span id="resEnteros">625</span> unidades</li>
+              <li><strong>Medios Bloques de Traba (PB-20):</strong> <span id="resMedios">63</span> unidades</li>
+              <li><strong>Plástico HDPE Reciclado Reutilizado:</strong> <span id="resKg">1,382</span> kg</li>
+              <li><strong>Color:</strong> <span id="resColor">Gris Industrial</span></li>
+            </ul>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem;">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">INVERSIÓN ESTIMADA (EX-WORKS):</span>
+              <div id="resTotal" style="font-size: 2rem; font-weight: 700; color: var(--electric-blue);">$2,340.00 USD</div>
+            </div>
+            <p id="budgetConfirmation" style="display: none; margin-top: 1rem; color: var(--electric-blue); font-size: 0.9rem;">
+              ✓ Cotización enviada correctamente a nuestro departamento de ingeniería y alianzas institucionales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 PoliBlocks.</span>
+        <span>COTIZADOR INSTITUCIONAL</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
